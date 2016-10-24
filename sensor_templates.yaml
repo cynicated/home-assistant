@@ -1,0 +1,112 @@
+# First Alert CO2 / Smoke Detector
+- platform: template
+  sensors:
+    status_smoke_co_alarm:
+      value_template: >-
+          {%- if is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_6_0", "13") %}
+              Idle
+          {% elif is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_6_0", "1") %}
+              Fire Detected
+          {% elif is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_6_0", "2") %}
+              Carbon Monoxide Detected
+          {% elif is_state("sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_6_0", "12") %}
+              Alarm Testing
+          {% else %}
+              Unknown
+          {%- endif %}
+      friendly_name: 'Smoke/CO Alarm'
+- platform: template
+  sensors:
+    battery_level_smoke_co_alarm:
+      value_template: '{{states.sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_6_0.attributes.battery_level}}'
+      friendly_name: 'Smoke/CO Alarm Battery'
+      unit_of_measurement: '%'
+# GoControl Multi-Sensor Motion Detector
+- platform: template
+  sensors:
+    status_mud_room_motion:
+      value_template: >-
+        {%- if is_state("sensor.motion01_alarm_level_2_1", "0") %}
+            Idle
+        {% elif is_state("sensor.motion01_alarm_level_2_1", "255") %}
+            Motion Detected
+        {% else %}
+            Unknown
+        {%- endif %}
+      friendly_name: 'Mud Room Motion'
+- platform: template
+  sensors:
+    battery_level_mud_room_multi:
+      value_template: '{{states.binary_sensor.motion01_sensor_2_0.attributes.battery_level}}'
+      friendly_name: 'Mud Room Multisensor Battery'
+      unit_of_measurement: '%'
+# GoControl Door Sensor 1 (Dining Room Door)
+- platform: template
+  sensors:
+    status_dining_room_door:
+      value_template: >-
+        {%- if is_state("sensor.linear_unknown_type2001_id0102_alarm_level_7_1", "0") %}
+            Closed
+        {% elif is_state("sensor.linear_unknown_type2001_id0102_alarm_level_7_1", "255") %}
+            Open
+        {% else %}
+            Unknown
+        {%- endif %}
+      friendly_name: 'Dining Room Door'
+- platform: template
+  sensors:
+    battery_level_dining_room_door:
+      value_template: '{{states.binary_sensor.linear_unknown_type2001_id0102_sensor_7_0.attributes.battery_level}}'
+      friendly_name: 'Dining Room Door Battery'
+      unit_of_measurement: '%'
+# GoControl Door Sensor 2 (Basement Door)
+- platform: template
+  sensors:
+    status_basement_door:
+      value_template: >-
+        {%- if is_state("sensor.linear_unknown_type2001_id0102_alarm_level_8_1", "0") %}
+            Closed
+        {% elif is_state("sensor.linear_unknown_type2001_id0102_alarm_level_8_1", "255") %}
+            Open
+        {% else %}
+            Unknown
+        {%- endif %}
+      friendly_name: 'Basement Door'
+- platform: template
+  sensors:
+    battery_level_basement_door:
+      value_template: '{{states.binary_sensor.linear_unknown_type2001_id0102_sensor_8_0.attributes.battery_level}}'
+      friendly_name: 'Basement Door Battery'
+      unit_of_measurement: '%'
+- platform: speedtest
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /
+    - type: disk_use_percent
+      arg: /var/log
+    - type: memory_use_percent
+    - type: memory_use
+    - type: memory_free
+    - type: processor_use
+    - type: swap_use_percent
+    - type: swap_use
+    - type: swap_free
+    - type: last_boot
+    - type: since_last_boot
+    - type: network_in
+      arg: wlan0
+    - type: network_out
+      arg: wlan0
+    - type: packets_in
+      arg: wlan0
+    - type: packets_out
+      arg: wlan0
+    - type: ipv4_address
+      arg: wlan0
+    - type: ipv6_address
+      arg: wlan0

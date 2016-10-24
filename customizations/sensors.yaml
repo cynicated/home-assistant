@@ -1,0 +1,48 @@
+# GoControl Motion Combo Sensor
+binary_sensor.motion01_sensor_2_0:
+  hidden: true
+sensor.motion01_temperature_2_1:
+  friendly_name: Mud Room Temperature
+sensor.motion01_alarm_level_2_1:
+  hidden: true
+sensor.motion01_alarm_type_2_0:
+  hidden: true
+sensor.motion01_burglar_2_10:
+  hidden: true
+sensor.motion01_sourcenodeid_2_2:
+  hidden: true
+# GoControl Dining Room Door Sensor
+binary_sensor.linear_unknown_type2001_id0102_sensor_7_0:
+  hidden: true
+sensor.linear_unknown_type2001_id0102_sourcenodeid_7_2:
+  hidden: true
+sensor.linear_unknown_type2001_id0102_alarm_level_7_1:
+  hidden: true
+sensor.linear_unknown_type2001_id0102_alarm_type_7_0:
+  hidden: true
+sensor.linear_unknown_type2001_id0102_burglar_7_10:
+  hidden: true
+sensor.battery_level_dining_room_door:
+  icon: mdi:battery-outline
+# GoControl Basement Door Sensor
+binary_sensor.linear_unknown_type2001_id0102_sensor_8_0:
+  hidden: true
+sensor.linear_unknown_type2001_id0102_sourcenodeid_8_2:
+  hidden: true
+sensor.linear_unknown_type2001_id0102_alarm_level_8_1:
+  hidden: true
+sensor.linear_unknown_type2001_id0102_alarm_type_8_0:
+  hidden: true
+sensor.linear_unknown_type2001_id0102_burglar_8_10:
+  hidden: true
+sensor.battery_level_basement_door:
+  icon: mdi:battery-outline
+# First Alert CO2 / Smoke Detector - Stairwell
+sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_level_6_1:
+  hidden: true
+sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_6_0:
+  hidden: true
+sensor.battery_level_mud_room_multi:
+  icon: mdi:battery-outline
+sensor.battery_level_smoke_co_alarm:
+  icon: mdi:battery-outline

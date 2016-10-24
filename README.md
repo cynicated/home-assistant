@@ -1,0 +1,1 @@
+Current Home Assistant Configuration

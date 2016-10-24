@@ -1,0 +1,12 @@
+*.pid
+*.xml
+.HA_VERSION
+OZW_Log.txt
+home-assistant.log
+home-assistant_v2.db
+deps
+secrets.yaml
+known_devices.yaml
+pyozw.sqlite
+*.uuid
+.gitattributes

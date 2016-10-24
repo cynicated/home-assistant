@@ -1,0 +1,12 @@
+alias: "Alarm Notify"
+trigger:
+  - platform: state
+    entity_id: alarm_control_panel.ha_alarm
+    state: 'triggered'
+action:
+  service: notify.twilio_sms
+  data:
+    message: 'Alarm Triggered'
+    target:
+      - !secret mw_sms
+      - !secret kc_sms

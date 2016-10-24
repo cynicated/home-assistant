@@ -1,0 +1,15 @@
+alias: "Smoke Alarm"
+trigger:
+  - platform: state
+    entity_id: sensor.status_smoke_co_alarm
+    state: 'Fire Detected'
+  - platform: state
+    entity_id: sensor.status_smoke_co_alarm
+    state: 'Carbon Monoxide Detected'
+action:
+  service: notify.twilio_sms
+  data:
+    message: 'Top of Stairs - Smoke Detected'
+    target:
+      - !secret mw_sms
+      - !secret kc_sms
