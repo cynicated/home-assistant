@@ -1,0 +1,5 @@
+- platform: nmap_tracker
+  hosts: 192.168.1.38-243
+  track_new_devices: no
+  home_interval: 5
+  consider_home: 240 # 4 minutes = 240 seconds

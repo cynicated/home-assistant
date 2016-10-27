@@ -1,0 +1,6 @@
+security:
+  name: Security
+  entities:
+    - sensor.status_mud_room_motion
+    - sensor.status_dining_room_door
+    - sensor.status_basement_door

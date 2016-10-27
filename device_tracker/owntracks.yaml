@@ -1,0 +1,6 @@
+- platform: owntracks
+  max_gps_accuracy: 200
+  waypoints: true
+  track_new_devices: no
+  waypoint_whitelist:
+    mwood

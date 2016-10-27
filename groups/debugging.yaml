@@ -1,0 +1,7 @@
+automation_group:
+  name: Automations
+  entities:
+    - automation.alarm_notify
+    - automation.alarm_triggered
+    - automation.mw_leave_notify
+    - automation.smoke_alarm

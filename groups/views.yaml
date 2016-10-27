@@ -1,0 +1,34 @@
+default_view:
+  name: DEFAULT
+  view: yes
+  icon: mdi:home
+  entities:
+    - group.security
+    - group.mud_room
+    - group.safety
+    - device_tracker.mwood_shamu
+    - alarm_control_panel.ha_alarm
+
+battery_view:
+  name: Battery
+  view: yes
+  icon: mdi:battery
+  entities:
+    - group.power
+
+status_view:
+  name: Status
+  view: yes
+  icon: mdi:chip
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_ping
+    - sensor.speedtest_upload
+    - group.sensor_pi
+
+debug_view:
+  name: Debugging
+  view: yes
+  icon: mdi:database
+  entities:
+    - group.automation_group

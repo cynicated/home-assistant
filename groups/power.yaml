@@ -1,0 +1,7 @@
+power:
+  name: Batteries
+  entities:
+    - sensor.battery_level_mud_room_multi
+    - sensor.battery_level_smoke_co_alarm
+    - sensor.battery_level_dining_room_door
+    - sensor.battery_level_basement_door

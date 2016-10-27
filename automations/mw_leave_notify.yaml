@@ -1,0 +1,12 @@
+alias: "MW Leave Notify"
+trigger:
+  - platform: state
+    entity_id: device_tracker.mwood_shamu
+    from: 'home'
+    to: 'not_home'
+action:
+  service: notify.twilio_sms
+  data:
+    message: 'MW Left Home'
+    target:
+      - !secret mw_sms

@@ -1,0 +1,4 @@
+safety:
+  name: Safety
+  entities:
+    - sensor.status_smoke_co_alarm
