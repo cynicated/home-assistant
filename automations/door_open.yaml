@@ -1,0 +1,17 @@
+alias: "Door Opened"
+trigger:
+  - platform: state
+    entity_id: sensor.status_basement_door
+    from: 'Closed'
+    to: 'Open'
+  - platform: state
+    entity_id: sensor.status_dining_room_door
+    from: 'Closed'
+    to: 'Open'
+action:
+  service: zwave.set_config_parameter
+  data_template: {
+    "node_id": 9,
+    "parameter": 6,
+    "value": 2
+    }

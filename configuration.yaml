@@ -92,7 +92,8 @@ logbook:
       - sensor.packets_sent_wlan0
 
 recorder:
-  purge_days: 7
+  db_url: postgres://@/hass
+  purge_days: 14
 # Track the sun
 sun:
 

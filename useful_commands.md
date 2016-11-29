@@ -9,6 +9,16 @@ A list of useful commands when working with Home Assistant from the command line
 Necessary after updating configuration files:  
 `sudo systemctl restart home-assistant`
 
+**Upgrade Home Assistant**
+
+*Note: these work when Home Assistant was installed using the All-In-One setup*
+
+- Login to Raspberry Pi
+- Change to `hass` user `sudo su -s /bin/bash hass`
+- Change to virtual environment `source /srv/hass/hass_venv/bin/activate`
+- Update HA `pip3 install --upgrade homeassistant`
+- Type `exit` to logout the `hass` user, and return to the `pi` user
+
 ## Mosquitto
 
 **Restart the Mosquitto Service**
