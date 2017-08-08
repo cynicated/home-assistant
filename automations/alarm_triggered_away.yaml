@@ -1,4 +1,4 @@
-alias: "Alarm Triggered"
+alias: "Alarm Triggered Away"
 trigger:
   - platform: state
     entity_id: sensor.status_basement_door
@@ -10,14 +10,18 @@ trigger:
     entity_id: sensor.status_mud_room_motion
     state: 'Motion Detected'
 condition:
-  condition: or
-  conditions:
-    - condition: state
-      entity_id: alarm_control_panel.ha_alarm
-      state: armed_away
-    - condition: state
-      entity_id: alarm_control_panel.ha_alarm
-      state: armed_home
+  - condition: state
+    entity_id: alarm_control_panel.ha_alarm
+    state: armed_away  
+#condition:
+#  condition: or
+#  conditions:
+#    - condition: state
+#      entity_id: alarm_control_panel.ha_alarm
+#      state: armed_away
+#    - condition: state
+#      entity_id: alarm_control_panel.ha_alarm
+#      state: armed_home
 action:
   service: alarm_control_panel.alarm_trigger
   entity_id: alarm_control_panel.ha_alarm

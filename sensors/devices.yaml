@@ -18,7 +18,12 @@
 - platform: template
   sensors:
     battery_level_smoke_co_alarm:
-      value_template: '{{states.sensor.first_alert_zcombo_smoke_and_carbon_monoxide_detector_alarm_type_6_0.attributes.battery_level}}'
+      value_template: >-
+        {% if states.zwave.first_alert_zcombo_smoke_and_carbon_monoxide_detector_6 %}
+          {{states.zwave.first_alert_zcombo_smoke_and_carbon_monoxide_detector_6.attributes.battery_level}}
+        {% else %}
+          n/a
+        {% endif %}
       friendly_name: 'Smoke/CO Alarm Battery'
       unit_of_measurement: '%'
 # GoControl Multi-Sensor Motion Detector
@@ -37,7 +42,12 @@
 - platform: template
   sensors:
     battery_level_mud_room_multi:
-      value_template: '{{states.binary_sensor.motion01_sensor_2_0.attributes.battery_level}}'
+      value_template: >-
+        {% if states.zwave.motion01_2 %}
+          {{states.zwave.motion01_2.attributes.battery_level}}
+        {% else %}
+          n/a
+        {% endif %}
       friendly_name: 'Mud Room Multisensor Battery'
       unit_of_measurement: '%'
 # GoControl Door Sensor 1 (Dining Room Door)
@@ -56,7 +66,12 @@
 - platform: template
   sensors:
     battery_level_dining_room_door:
-      value_template: '{{states.binary_sensor.linear_unknown_type2001_id0102_sensor_7_0.attributes.battery_level}}'
+      value_template: >-
+        {% if states.zwave.linear_unknown_type2001_id0102_7 %}
+          {{states.zwave.linear_unknown_type2001_id0102_7.attributes.battery_level}}
+        {% else %}
+          n/a
+        {% endif %}
       friendly_name: 'Dining Room Door Battery'
       unit_of_measurement: '%'
 # GoControl Door Sensor 2 (Basement Door)
@@ -75,6 +90,11 @@
 - platform: template
   sensors:
     battery_level_basement_door:
-      value_template: '{{states.binary_sensor.linear_unknown_type2001_id0102_sensor_8_0.attributes.battery_level}}'
+      value_template: >-
+        {% if states.zwave.linear_unknown_type2001_id0102_8 %}
+          {{states.zwave.linear_unknown_type2001_id0102_8.attributes.battery_level}}
+        {% else %}
+          n/a
+        {% endif %}
       friendly_name: 'Basement Door Battery'
       unit_of_measurement: '%'

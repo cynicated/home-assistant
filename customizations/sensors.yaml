@@ -2,7 +2,7 @@
 binary_sensor.motion01_sensor_2_0:
   hidden: true
 sensor.motion01_temperature_2_1:
-  friendly_name: Mud Room Temperature
+  friendly_name: Dining Room Temperature
 sensor.motion01_alarm_level_2_1:
   hidden: true
 sensor.motion01_alarm_type_2_0:
@@ -46,3 +46,8 @@ sensor.battery_level_mud_room_multi:
   icon: mdi:battery-outline
 sensor.battery_level_smoke_co_alarm:
   icon: mdi:battery-outline
+# Dark Sky Customization
+sensor.dark_sky_temperature:
+  friendly_name: Outdoor Temperature
+sensor.dark_sky_summary:
+  friendly_name: Outdoor Summary

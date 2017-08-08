@@ -1,0 +1,7 @@
+climate:
+  name: Climate
+  icon: mdi:home
+  entities:
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_summary
+    - sensor.motion01_temperature_2_1

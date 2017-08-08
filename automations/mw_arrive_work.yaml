@@ -1,13 +1,14 @@
-alias: "MW Leave Notify"
+alias: "MW Arrive Work"
 initial_state: false
 trigger:
   - platform: state
     entity_id: device_tracker.mwood_nexus6p
-    from: 'home'
-    to: 'not_home'
+    to: 'MW_Work'
+    for:
+      minutes: 5
 action:
   service: notify.twilio_sms
   data:
-    message: 'MW Left Home'
+    message: 'MW arrived at work!'
     target:
       - !secret mw_sms

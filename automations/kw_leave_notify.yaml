@@ -1,13 +1,13 @@
-alias: "MW Leave Notify"
+alias: "KW Leave Notify"
 initial_state: false
 trigger:
   - platform: state
-    entity_id: device_tracker.mwood_nexus6p
+    entity_id: device_tracker.kwood_iphone
     from: 'home'
     to: 'not_home'
 action:
   service: notify.twilio_sms
   data:
-    message: 'MW Left Home'
+    message: 'KW Left Home'
     target:
       - !secret mw_sms

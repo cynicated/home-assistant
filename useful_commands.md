@@ -19,12 +19,6 @@ Necessary after updating configuration files:
 - Update HA `pip3 install --upgrade homeassistant`
 - Type `exit` to logout the `hass` user, and return to the `pi` user
 
-**Watching Log on Console**
-*Note: this works with the All-In-One setup of Home Assistant*
-`sudo journalctl -u home-assistant@hass`
-
-If you add a `-f`, it will sit there and print out updates as they are written.
-
 ## Mosquitto
 
 **Restart the Mosquitto Service**

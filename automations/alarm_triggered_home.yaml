@@ -1,0 +1,27 @@
+alias: "Alarm Triggered Home"
+trigger:
+  - platform: state
+    entity_id: sensor.status_basement_door
+    state: 'Open'
+  - platform: state
+    entity_id: sensor.status_dining_room_door
+    state: 'Open'
+#   - platform: state
+#    entity_id: sensor.status_mud_room_motion
+#    state: 'Motion Detected'
+condition:
+  - condition: state
+    entity_id: alarm_control_panel.ha_alarm
+    state: armed_home
+#condition:
+#  condition: or
+#  conditions:
+#    - condition: state
+#      entity_id: alarm_control_panel.ha_alarm
+#      state: armed_away
+#    - condition: state
+#      entity_id: alarm_control_panel.ha_alarm
+#      state: armed_home
+action:
+  service: alarm_control_panel.alarm_trigger
+  entity_id: alarm_control_panel.ha_alarm

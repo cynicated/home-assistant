@@ -3,12 +3,16 @@ default_view:
   view: yes
   icon: mdi:home
   entities:
+    - group.mobile_devices
     - group.security
-    - group.mud_room
+    - group.climate
     - group.safety
-    - device_tracker.mwood_shamu
+    - group.switch_control
+    - device_tracker.mwood_nexus6p
+    - device_tracker.kwood_iphone
     - alarm_control_panel.ha_alarm
     - updater.updater
+    - camera.foscam_camera
 
 battery_view:
   name: Battery

@@ -1,6 +1,0 @@
-mud_room:
-  name: Mud Room
-  icon: mdi:home
-  entities:
-    - switch.light01_switch_3_0
-    - sensor.motion01_temperature_2_1

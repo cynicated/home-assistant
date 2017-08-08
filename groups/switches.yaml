@@ -1,0 +1,6 @@
+switch_control:
+  name: Switches
+  icon: mdi:home
+  entities:
+    - switch.light01_switch_3_0
+    - switch.smartplug

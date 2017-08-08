@@ -1,0 +1,10 @@
+alias: "Update Notify"
+trigger:
+  - platform: state
+    entity_id: updater.updater
+action:
+  service: notify.twilio_sms
+  data:
+    message: "Home Assistant {{ states.updater.updater.sate }} is now available!"
+    target:
+      - !secret mw_sms

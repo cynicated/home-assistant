@@ -1,0 +1,10 @@
+- platform: darksky
+  api_key: !secret darkskyapi
+  update_interval:
+    days: 0
+    hours: 0
+    minutes: 3
+    seconds: 0
+  monitored_conditions:
+    - temperature
+    - summary

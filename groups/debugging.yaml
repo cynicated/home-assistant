@@ -4,4 +4,7 @@ automation_group:
     - automation.alarm_notify
     - automation.alarm_triggered
     - automation.mw_leave_notify
+    - automation.mw_arrive_work
+    - automation.mw_left_work
+    - automation.kw_leave_notify
     - automation.smoke_alarm

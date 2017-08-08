@@ -1,0 +1,5 @@
+mobile_devices:
+  name: Mobile Devices
+  entities:
+    - sensor.katherines_iphone_battery
+    - sensor.marks_nexus6p_battery

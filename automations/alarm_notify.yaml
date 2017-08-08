@@ -9,4 +9,4 @@ action:
     message: 'Alarm Triggered'
     target:
       - !secret mw_sms
-      - !secret kc_sms
+#      - !secret kc_sms

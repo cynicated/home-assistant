@@ -1,0 +1,15 @@
+# mw phone battery
+- platform: mqtt
+  state_topic: owntracks/mwood/nexus6p
+  name: "Mark's Nexus6p Battery"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.batt }}'
+  icon: mdi:battery
+
+# mw phone battery
+- platform: mqtt
+  state_topic: owntracks/kwood/iphone
+  name: "Katherine's iPhone Battery"
+  unit_of_measurement: "%"
+  value_template: '{{ value_json.batt }}'
+  icon: mdi:battery
